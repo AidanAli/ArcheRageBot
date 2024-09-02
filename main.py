@@ -5,7 +5,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import _webServer
 
-from cogs.PersistentButtonViews.ClassMenu_Picker import SelectMenu
 from cogs.PersistentButtonViews.Set_Events_Notification import ArcheRage_Event_Notification
 from cogs.PersistentButtonViews.Support_TicketSystem import SupportView
 from cogs.PersistentButtonViews.Ship_Embed_Application import ShipButtons
@@ -59,7 +58,7 @@ class Client(commands.Bot):
 
     async def setup_hook(self):
         self.add_view(SupportView())
-        self.add_view(SelectMenu())
+
         self.add_view(ShipButtons())
         self.add_view(VehicleButtons())
         self.add_view(ArcheRage_Event_Notification())
