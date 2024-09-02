@@ -3,6 +3,8 @@ from discord import app_commands
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 
+from main import Guild_ID
+
 
 class Utility(commands.Cog):
     def __init__(self, client):
@@ -166,5 +168,5 @@ class Utility(commands.Cog):
 
 
 async def setup(client):
-    await client.add_cog(Utility(client), guilds=[discord.Object(id="1271649288791003217")])
+    await client.add_cog(Utility(client), guilds=[discord.Object(id=Guild_ID)])
 

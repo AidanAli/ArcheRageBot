@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
+from main import Guild_ID
+
 
 class YourCogName(commands.Cog):
     def __init__(self, bot):
@@ -27,4 +29,4 @@ class YourCogName(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(YourCogName(bot), guilds=[discord.Object(id="1271649288791003217")])
+    await bot.add_cog(YourCogName(bot), guilds=[discord.Object(id=Guild_ID)])

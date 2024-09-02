@@ -4,6 +4,9 @@ from discord.ext import commands
 import sqlite3
 from datetime import datetime, timedelta
 
+from main import Guild_ID
+
+
 class MemberLogger(commands.Cog):
     def __init__(self, client, db_file):
         self.bot = client
@@ -120,4 +123,4 @@ class MemberLogger(commands.Cog):
 
 async def setup(client):
     db_file = 'discord_bot.db'
-    await client.add_cog(MemberLogger(client, db_file),guilds=[discord.Object(id="1271649288791003217")])
+    await client.add_cog(MemberLogger(client, db_file),guilds=[discord.Object(id=Guild_ID)])

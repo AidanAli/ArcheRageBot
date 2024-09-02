@@ -4,6 +4,8 @@ from discord.ext import commands
 from datetime import datetime, timedelta
 import pytz
 
+from main import Guild_ID
+
 
 class Create_Event(commands.Cog):
     def __init__(self, bot):
@@ -114,4 +116,4 @@ class Create_Event(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(Create_Event(bot), guilds=[discord.Object(id="1271649288791003217")])
+    await bot.add_cog(Create_Event(bot), guilds=[discord.Object(id=Guild_ID)])

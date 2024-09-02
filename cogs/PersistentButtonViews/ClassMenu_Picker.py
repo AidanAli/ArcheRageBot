@@ -3,6 +3,8 @@ from discord.ext import commands
 from discord import app_commands
 from discord.ui import Select, View
 
+from main import Guild_ID
+
 
 class SelectMenu(discord.ui.View):
     def __init__(self):
@@ -75,4 +77,4 @@ class drop_Down(commands.Cog):
 
 async def setup(client):
     client.remove_command("help")
-    await client.add_cog(drop_Down(client), guilds=[discord.Object(id="1271649288791003217")])
+    await client.add_cog(drop_Down(client), guilds=[discord.Object(id=Guild_ID)])
