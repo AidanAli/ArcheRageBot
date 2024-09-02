@@ -52,7 +52,7 @@ class Client(commands.Bot):
         )
 
         try:
-            synced = await self.tree.sync(guild=discord.Object(id=1271649288791003217))
+            synced = await self.tree.sync(guild=discord.Object(id=Guild_ID))
             print(f"{len(synced)} command(s)")
         except Exception as e:
             print(e)
