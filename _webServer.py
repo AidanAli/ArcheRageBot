@@ -6,7 +6,7 @@ app = Flask('')
 
 @app.route('/')
 def home():
-    return "Discord Bot Okay"
+    return "ArcheRage Events Bot 🟢"
 
 
 def run():
