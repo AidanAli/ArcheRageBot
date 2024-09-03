@@ -15,8 +15,8 @@ load_dotenv()
 intents = discord.Intents.all()
 DISCORD_TOKEN = os.environ['discordkey']
 
-event_Ping = os.environ['event_Ping']
-Guild_ID = os.environ['Guild_ID']
+event_Ping = 1271666990305775656
+Guild_ID = 1271649288791003217
 
 
 class Client(commands.Bot):
