@@ -16,7 +16,7 @@ class TestJOB(commands.Cog):
         self.scheduler = AsyncIOScheduler(timezone=pytz.timezone('US/Eastern'))
         self.scheduler.start()
         testObject = AndTrigger(
-            [CronTrigger(hour=23, minute=30, day_of_week='mon', timezone=pytz.timezone('US/Eastern'))])
+            [CronTrigger(hour=23, minute=39, day_of_week='mon', timezone=pytz.timezone('US/Eastern'))])
         self.scheduler.add_job(self.send_message, testObject)
 
     async def send_message(self):

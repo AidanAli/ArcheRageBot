@@ -12,6 +12,7 @@ from cogs.PersistentButtonViews.Vehicle_Embed_Application import VehicleButtons
 
 DISCORD_TOKEN = os.environ['discordtoken']
 event_Ping = 1271666990305775656
+Guild_ID = 1271649288791003217
 
 load_dotenv()
 
