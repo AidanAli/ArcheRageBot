@@ -3,20 +3,19 @@ import os
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-import _webServer
 
+from cogs.PersistentButtonViews.ClassMenu_Picker import SelectMenu
 from cogs.PersistentButtonViews.Set_Events_Notification import ArcheRage_Event_Notification
 from cogs.PersistentButtonViews.Support_TicketSystem import SupportView
 from cogs.PersistentButtonViews.Ship_Embed_Application import ShipButtons
 from cogs.PersistentButtonViews.Vehicle_Embed_Application import VehicleButtons
 
+DISCORD_TOKEN = os.environ['discordtoken']
+event_Ping = 1271666990305775656
+
 load_dotenv()
 
 intents = discord.Intents.all()
-DISCORD_TOKEN = os.environ['discordkey']
-
-event_Ping = 1271666990305775656
-Guild_ID = 1271649288791003217
 
 
 class Client(commands.Bot):
@@ -51,14 +50,13 @@ class Client(commands.Bot):
         )
 
         try:
-            synced = await self.tree.sync(guild=discord.Object(id=Guild_ID))
+            synced = await self.tree.sync(guild=discord.Object(id=1271649288791003217))
             print(f"{len(synced)} command(s)")
         except Exception as e:
             print(e)
 
     async def setup_hook(self):
         self.add_view(SupportView())
-
         self.add_view(ShipButtons())
         self.add_view(VehicleButtons())
         self.add_view(ArcheRage_Event_Notification())
@@ -73,7 +71,6 @@ class Client(commands.Bot):
                 await self.load_extension(cog_name)
 
 
-_webServer.keep_alive()
 if __name__ == "__main__":
     async def main():
         bot = Client()

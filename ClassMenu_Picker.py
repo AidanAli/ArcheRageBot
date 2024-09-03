@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord import app_commands
 from discord.ui import Select, View
 
-from main import Guild_ID
+
 
 
 class SelectMenu(discord.ui.View):
